@@ -20,7 +20,6 @@
 	<button onclick="mg()">-green</button>
 	<button onclick="mb()">-blue</button>
 	<button onclick="reset()">reset</button>
-	<button onclick="printValue()">printValue</button>
 	<p id="rgb">rgb(255, 255, 255)</p>
 	<div>
 		<h4>change step width</h4>
@@ -50,11 +49,6 @@ function reset() {
 	b=255;
 	setrgbout(r, g, b);
 }
-
-function printValue() {
-	alert('rgb('+r+','+g+','+b+')')
-}
-
 function mr() {
 	g+=window.step;
 	b+=window.step;
