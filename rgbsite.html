@@ -28,10 +28,10 @@
 	</div>
 </body>
 <script type="text/javascript">
-var g = 255;
-var r = 255;
-var b = 255;
-window.step = 1;
+g = 255;
+r = 255;
+b = 255;
+step = 1;
 
 function setrgbout(r,g,b)
 {
@@ -39,7 +39,7 @@ function setrgbout(r,g,b)
 }
 
 function stepchanged() {
-	window.step = document.getElementById("stepWidth").value;
+	step = document.getElementById("stepWidth").value;
 	alert("step changed");
 }
 function reset() {
@@ -50,8 +50,11 @@ function reset() {
 	setrgbout(r, g, b);
 }
 function mr() {
-	g+=window.step;
-	b+=window.step;
+	alert(g)
+	alert(parseInt(step));
+	g+=parseInt(step);
+	b+=parseInt(step);
+	alert(g)
 	if(g>255)
 	{
 		g=255;
@@ -60,12 +63,13 @@ function mr() {
 	{
 		b=255;
 	}
+	alert(parseInt(step))
 	setrgbout(r, g, b);
 	document.body.style.backgroundColor = 'rgb('+r+','+g+','+b+')';
 }
 function mg() {
-	r+=window.step;
-	b+=window.step;
+	r+=parseInt(step);
+	b+=parseInt(step);
 	if(r>255)
 	{
 		r=255;
@@ -78,8 +82,8 @@ function mg() {
 	document.body.style.backgroundColor = 'rgb('+r+','+g+','+b+')';
 }
 function mb() {
-	r+=window.step;
-	g+=window.step;
+	r+=parseInt(step);
+	g+=parseInt(step);
 	if(g>255)
 	{
 		g=255;
@@ -92,8 +96,8 @@ function mb() {
 	document.body.style.backgroundColor = 'rgb('+r+','+g+','+b+')';
 }
 function pr () {
-	g-=window.step;
-	b-=window.step;
+	g-=parseInt(step);
+	b-=parseInt(step);
 	if(g<0)
 	{
 		g=0;
@@ -106,8 +110,8 @@ function pr () {
 	document.body.style.backgroundColor = 'rgb('+r+','+g+','+b+')';
 }
 function pg () {
-	r-=window.step;
-	b-=window.step;
+	r-=parseInt(step);
+	b-=parseInt(step);
 	if(r<0)
 	{
 		r=0;
@@ -120,8 +124,8 @@ function pg () {
 	document.body.style.backgroundColor = 'rgb('+r+','+g+','+b+')';
 }
 function pb () {
-	r-=window.step;
-	g-=window.step;
+	r-=parseInt(step);
+	g-=parseInt(step);
 	if(g<0)
 	{
 		g=0;
